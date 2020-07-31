@@ -10,6 +10,8 @@ import UIKit
 
 class CharactersViewController: UIViewController {
 
+    var viewModel: CharactersViewModelProtocol!
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }

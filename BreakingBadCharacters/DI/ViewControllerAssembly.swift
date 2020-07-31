@@ -14,7 +14,7 @@ class ViewControllerAssembly: Assembly {
 
     func assemble(container: Container) {
         container.storyboardInitCompleted(CharactersViewController.self) { (res, controller) in
-
+            controller.viewModel = res.resolve(CharactersViewModelProtocol.self)
         }
     }
 }
