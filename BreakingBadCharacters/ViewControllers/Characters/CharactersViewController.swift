@@ -71,14 +71,15 @@ class CharactersViewController: UIViewController {
                                                   multiplier: 1, constant: 30)
         
         filterButton.addConstraints([heightConstraint, widthConstraint])
-        filterButton.rx.tap.subscribe(onNext: { _ in
-            // TODO: implement filter button tap
+        filterButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            self?.performSegue(withIdentifier: "filterBySeasonSegue", sender: self)
         }).disposed(by: disposeBag)
         let stackView = UIStackView(arrangedSubviews: [searchController.searchBar, filterButton])
         stackView.axis = .horizontal
         stackView.spacing = 8
-        self.navigationItem.titleView = stackView
-        self.definesPresentationContext = true
+        navigationItem.titleView = stackView
+        definesPresentationContext = true
+        modalPresentationStyle = .overCurrentContext
     }
     
     func bindUI() {
@@ -92,6 +93,15 @@ class CharactersViewController: UIViewController {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
         searchController.searchBar.endEditing(true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let filterVc = segue.destination as? FilterBySeasonViewController {
+            filterVc.currentFilters = viewModel.seasonsFilter
+            filterVc.filterBySeasons = { [weak self] (seasons) in
+                self?.viewModel.filterBy(seasonAppearance: seasons)
+            }
+        }
     }
 }
 

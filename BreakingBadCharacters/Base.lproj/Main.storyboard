@@ -132,14 +132,105 @@
                     <navigationItem key="navigationItem" id="xN2-wk-RVx"/>
                     <connections>
                         <outlet property="collectionView" destination="CwY-5G-fFA" id="Bav-Fh-Ejr"/>
+                        <segue destination="9ki-J5-zfO" kind="presentation" identifier="filterBySeasonSegue" id="tgh-VV-wRb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-271.01449275362319" y="-285.26785714285711"/>
         </scene>
+        <!--Filter By Season View Controller-->
+        <scene sceneID="sgI-Pr-Qmc">
+            <objects>
+                <viewController storyboardIdentifier="FilterBySeasonViewController" id="9ki-J5-zfO" customClass="FilterBySeasonViewController" customModule="BreakingBadCharacters" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5nT-Mf-5hb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qEU-y1-CTI">
+                                <rect key="frame" x="40" y="40" width="334" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31j-Ih-AYV" userLabel="Season 1" customClass="FilterButton" customModule="BreakingBadCharacters" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="60.5" height="48"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="baseline_filter_1_white_48pt"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="season">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nD6-yd-StC" userLabel="Season 2" customClass="FilterButton" customModule="BreakingBadCharacters" customModuleProvider="target">
+                                        <rect key="frame" x="68.5" y="0.0" width="60.5" height="48"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="baseline_filter_2_white_48pt"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="season">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNO-8i-WWK" userLabel="Season 2" customClass="FilterButton" customModule="BreakingBadCharacters" customModuleProvider="target">
+                                        <rect key="frame" x="137" y="0.0" width="60" height="48"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="baseline_filter_3_white_48pt"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="season">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guK-ag-rfj" userLabel="Season 2" customClass="FilterButton" customModule="BreakingBadCharacters" customModuleProvider="target">
+                                        <rect key="frame" x="205" y="0.0" width="60.5" height="48"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="baseline_filter_4_white_48pt"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="season">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YrG-gs-yLF" userLabel="Season 2" customClass="FilterButton" customModule="BreakingBadCharacters" customModuleProvider="target">
+                                        <rect key="frame" x="273.5" y="0.0" width="60.5" height="48"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="baseline_filter_5_white_48pt"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="season">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.36862745099999999" blue="0.22352941179999999" alpha="0.89864042207792205" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qEU-y1-CTI" firstAttribute="top" secondItem="Wkj-nr-GGP" secondAttribute="top" constant="40" id="BQI-d0-p6F"/>
+                            <constraint firstItem="qEU-y1-CTI" firstAttribute="leading" secondItem="Wkj-nr-GGP" secondAttribute="leading" constant="40" id="Dak-sj-ItP"/>
+                            <constraint firstItem="Wkj-nr-GGP" firstAttribute="trailing" secondItem="qEU-y1-CTI" secondAttribute="trailing" constant="40" id="tpS-2J-LXm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wkj-nr-GGP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nUh-lm-0sD"/>
+                    <connections>
+                        <outletCollection property="seasonFilterButtons" destination="31j-Ih-AYV" collectionClass="NSMutableArray" id="1RG-9j-MEx"/>
+                        <outletCollection property="seasonFilterButtons" destination="nD6-yd-StC" collectionClass="NSMutableArray" id="Ak1-EA-Aek"/>
+                        <outletCollection property="seasonFilterButtons" destination="kNO-8i-WWK" collectionClass="NSMutableArray" id="39T-UP-thZ"/>
+                        <outletCollection property="seasonFilterButtons" destination="guK-ag-rfj" collectionClass="NSMutableArray" id="GTb-dP-tk8"/>
+                        <outletCollection property="seasonFilterButtons" destination="YrG-gs-yLF" collectionClass="NSMutableArray" id="hnh-pP-ugu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5UN-Ql-VGX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="500.00000000000006" y="138.61607142857142"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Moth" width="425" height="425"/>
+        <image name="baseline_filter_1_white_48pt" width="48" height="48"/>
+        <image name="baseline_filter_2_white_48pt" width="48" height="48"/>
+        <image name="baseline_filter_3_white_48pt" width="48" height="48"/>
+        <image name="baseline_filter_4_white_48pt" width="48" height="48"/>
+        <image name="baseline_filter_5_white_48pt" width="48" height="48"/>
     </resources>
 </document>

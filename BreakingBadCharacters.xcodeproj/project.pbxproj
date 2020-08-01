@@ -28,6 +28,8 @@
 		978234A624D44E91001B76E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 978234A524D44E91001B76E5 /* Assets.xcassets */; };
 		978234A924D44E91001B76E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 978234A724D44E91001B76E5 /* LaunchScreen.storyboard */; };
 		978234B424D44E91001B76E5 /* BreakingBadCharactersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978234B324D44E91001B76E5 /* BreakingBadCharactersTests.swift */; };
+		978605FF24D5FD2E00DBCFF9 /* FilterBySeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978605FE24D5FD2E00DBCFF9 /* FilterBySeasonViewController.swift */; };
+		9786060124D600CA00DBCFF9 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9786060024D600CA00DBCFF9 /* FilterButton.swift */; };
 		97DE794524D459B900BF0C28 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DE794424D459B900BF0C28 /* CharactersViewController.swift */; };
 		BA420812DF0B6F084670FB8E /* Pods_BreakingBadCharacters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5004D7AF101EBF1A76870C42 /* Pods_BreakingBadCharacters.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +73,8 @@
 		978234AF24D44E91001B76E5 /* BreakingBadCharactersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreakingBadCharactersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		978234B324D44E91001B76E5 /* BreakingBadCharactersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadCharactersTests.swift; sourceTree = "<group>"; };
 		978234B524D44E91001B76E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		978605FE24D5FD2E00DBCFF9 /* FilterBySeasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBySeasonViewController.swift; sourceTree = "<group>"; };
+		9786060024D600CA00DBCFF9 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		97DE794424D459B900BF0C28 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		98B95CE2FDB628E7CE47F0DB /* Pods_BreakingBadCharactersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakingBadCharactersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC60EC37A1306310220204AE /* Pods-BreakingBadCharacters.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadCharacters.debug.xcconfig"; path = "Target Support Files/Pods-BreakingBadCharacters/Pods-BreakingBadCharacters.debug.xcconfig"; sourceTree = "<group>"; };
@@ -187,9 +191,19 @@
 			path = BreakingBadCharactersTests;
 			sourceTree = "<group>";
 		};
+		978605FD24D5FD1B00DBCFF9 /* FilterBySeason */ = {
+			isa = PBXGroup;
+			children = (
+				978605FE24D5FD2E00DBCFF9 /* FilterBySeasonViewController.swift */,
+				9786060024D600CA00DBCFF9 /* FilterButton.swift */,
+			);
+			path = FilterBySeason;
+			sourceTree = "<group>";
+		};
 		97DE793F24D458ED00BF0C28 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				978605FD24D5FD1B00DBCFF9 /* FilterBySeason */,
 				97DE794324D4596600BF0C28 /* Characters */,
 			);
 			path = ViewControllers;
@@ -422,9 +436,11 @@
 				977AE65824D583A300691DC6 /* ServiceAssembly.swift in Sources */,
 				977AE64524D4643F00691DC6 /* DIContainer.swift in Sources */,
 				977AE65024D4744600691DC6 /* CharactersViewModel.swift in Sources */,
+				9786060124D600CA00DBCFF9 /* FilterButton.swift in Sources */,
 				977AE65224D4747400691DC6 /* ViewModelAssembly.swift in Sources */,
 				977AE64E24D4669B00691DC6 /* UIViewController+Extensions.swift in Sources */,
 				977AE65624D57FB900691DC6 /* BreakingBadEndpoint.swift in Sources */,
+				978605FF24D5FD2E00DBCFF9 /* FilterBySeasonViewController.swift in Sources */,
 				977AE64C24D4662700691DC6 /* Storyboard.swift in Sources */,
 				977AE65424D57C9800691DC6 /* BreakingBadCharacter.swift in Sources */,
 				977AE65C24D5A34B00691DC6 /* CharacterCell.swift in Sources */,

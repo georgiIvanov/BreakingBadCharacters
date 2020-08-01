@@ -17,6 +17,7 @@ protocol CharactersViewModelProtocol: class {
     
     var characters: Driver<[BreakingBadCharacter]> { get }
     var nameFilter: String { get }
+    var seasonsFilter: [Int] { get }
 }
 
 class CharactersViewModel {
@@ -64,6 +65,11 @@ extension CharactersViewModel: CharactersViewModelProtocol {
     var nameFilter: String {
         let value = try? nameFilterSubject.value()
         return value ?? ""
+    }
+    
+    var seasonsFilter: [Int] {
+        let value = try? seasonAppearanceFilterSubject.value()
+        return value ?? []
     }
 }
 
