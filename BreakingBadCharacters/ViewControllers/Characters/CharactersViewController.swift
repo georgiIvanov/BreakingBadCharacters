@@ -67,10 +67,13 @@ class CharactersViewController: UIViewController {
             guard let selectedIndexPathCell = self?.collectionView.indexPathsForSelectedItems,
                 let selectedCell = self?.collectionView.cellForItem(at: selectedIndexPathCell[0]) as? CharacterCell
             else {
-              return
-          }
-
-          selectedCell.imageView.isHidden = false
+                return
+            }
+            
+            selectedCell.imageView.isHidden = false
+            UIView.animate(withDuration: 0.2, delay: 0.2, options: .curveEaseIn, animations: {
+                selectedCell.nameContainer.alpha = 1
+            })
         }
     }
     
@@ -183,14 +186,8 @@ extension CharactersViewController: UIViewControllerTransitioningDelegate {
         }
 
         transitionAnimator.originFrame = selectedCellSuperview.convert(selectedCell.frame, to: nil)
-        transitionAnimator.originFrame = CGRect(
-          x: transitionAnimator.originFrame.origin.x,
-          y: transitionAnimator.originFrame.origin.y,
-          width: transitionAnimator.originFrame.size.width,
-          height: transitionAnimator.originFrame.size.height
-        )
-
         transitionAnimator.presenting = true
+        selectedCell.nameContainer.alpha = 0
         selectedCell.imageView.isHidden = true
         return transitionAnimator
     }

@@ -15,6 +15,7 @@ class CharacterCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var nameContainer: UIView!
     
     func setup(_ character: BreakingBadCharacter) {
         nameLabel.text = character.name

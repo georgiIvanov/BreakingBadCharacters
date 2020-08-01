@@ -109,6 +109,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="imageView" destination="B8H-fB-3s4" id="0il-Iq-epZ"/>
+                                            <outlet property="nameContainer" destination="Esc-oF-3mv" id="RUt-UV-WPd"/>
                                             <outlet property="nameLabel" destination="LDb-xX-g3P" id="OXO-dE-QRb"/>
                                             <outlet property="nicknameLabel" destination="96m-YH-bKt" id="DAk-8O-vaR"/>
                                         </connections>
