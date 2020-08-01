@@ -11,6 +11,9 @@ target 'BreakingBadCharacters' do
   pod 'SwinjectStoryboard'
   pod 'Kingfisher'
   pod 'SwiftLint'
+  pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5'
+  pod 'Moya/RxSwift', '~> 14.0'
   
   # Pods for BreakingBadCharacters
 
