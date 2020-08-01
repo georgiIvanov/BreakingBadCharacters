@@ -14,6 +14,7 @@ class CharactersViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var viewModel: CharactersViewModelProtocol!
+    var searchController: UISearchController!
     var characters: [BreakingBadCharacter] = [] {
         didSet {
             collectionView.reloadData()
@@ -34,7 +35,7 @@ class CharactersViewController: UIViewController {
     
     func setupUI() {
         let layout = ZoomAndSnapFlowLayout()
-        let sizePercent: CGFloat = 0.6
+        let sizePercent: CGFloat = 0.54
         let verticalInset: CGFloat = 20
         let collectionSize = view.frame.size
         layout.itemSize = CGSize(width: collectionSize.width * sizePercent,
@@ -42,6 +43,45 @@ class CharactersViewController: UIViewController {
         
         collectionView.collectionViewLayout = layout
         collectionView.contentInsetAdjustmentBehavior = .always
+        
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.showsCancelButton = false
+        
+        let filterButton = UIButton()
+        let icon = UIImage(named: "Moth")
+        filterButton.setBackgroundImage(icon, for: .normal)
+        
+        filterButton.translatesAutoresizingMaskIntoConstraints = false
+        let widthConstraint = NSLayoutConstraint(item: filterButton,
+                                                 attribute: NSLayoutConstraint.Attribute.width,
+                                                 relatedBy: NSLayoutConstraint.Relation.equal,
+                                                 toItem: nil,
+                                                 attribute: NSLayoutConstraint.Attribute.notAnAttribute,
+                                                 multiplier: 1, constant: 30)
+        
+        let heightConstraint = NSLayoutConstraint(item: filterButton,
+                                                  attribute: NSLayoutConstraint.Attribute.height,
+                                                  relatedBy: NSLayoutConstraint.Relation.equal,
+                                                  toItem: nil,
+                                                  attribute: NSLayoutConstraint.Attribute.notAnAttribute,
+                                                  multiplier: 1, constant: 30)
+        
+        filterButton.addConstraints([heightConstraint, widthConstraint])
+        filterButton.rx.tap.subscribe(onNext: { _ in
+            // TODO: implement filter button tap
+        }).disposed(by: disposeBag)
+        let stackView = UIStackView(arrangedSubviews: [searchController.searchBar, filterButton])
+        stackView.axis = .horizontal
+        stackView.spacing = 8
+        self.navigationItem.titleView = stackView
+        self.definesPresentationContext = true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+        searchController.searchBar.endEditing(true)
     }
 }
 
@@ -68,6 +108,10 @@ extension CharactersViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
-    
+}
+
+extension CharactersViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        searchController.searchBar.endEditing(true)
+    }
 }
