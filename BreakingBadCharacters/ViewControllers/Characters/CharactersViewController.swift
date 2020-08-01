@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import RxSwift
 
 class CharactersViewController: UIViewController {
 
     var viewModel: CharactersViewModelProtocol!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.fetchCharacters()
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BreakingBadCharacter {
+struct BreakingBadCharacter: Codable {
     let charId: Int
     let name: String
     let birthday: String
