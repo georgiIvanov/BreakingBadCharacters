@@ -12,6 +12,7 @@ import RxSwift
 class CharactersViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    weak var filterButton: UIButton!
     
     var viewModel: CharactersViewModelProtocol!
     var searchController: UISearchController!
@@ -51,10 +52,10 @@ class CharactersViewController: UIViewController {
         searchController.searchBar.delegate = self
         
         let filterButton = UIButton()
-        let icon = UIImage(named: "Moth")
-        filterButton.setBackgroundImage(icon, for: .normal)
-        
+        self.filterButton = filterButton
+        filterButton.setBackgroundImage(UIImage(named: "baseline_filter_alt_white_48pt"), for: .normal)
         filterButton.translatesAutoresizingMaskIntoConstraints = false
+        
         let widthConstraint = NSLayoutConstraint(item: filterButton,
                                                  attribute: NSLayoutConstraint.Attribute.width,
                                                  relatedBy: NSLayoutConstraint.Relation.equal,
