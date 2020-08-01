@@ -25,6 +25,7 @@ class CharactersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        bindUI()
         
         viewModel.fetchCharacters()
         
@@ -47,6 +48,7 @@ class CharactersViewController: UIViewController {
         searchController = UISearchController(searchResultsController: nil)
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.showsCancelButton = false
+        searchController.searchBar.delegate = self
         
         let filterButton = UIButton()
         let icon = UIImage(named: "Moth")
@@ -76,6 +78,13 @@ class CharactersViewController: UIViewController {
         stackView.spacing = 8
         self.navigationItem.titleView = stackView
         self.definesPresentationContext = true
+    }
+    
+    func bindUI() {
+        searchController.searchBar.rx.text.subscribe(onNext: { [weak self] (text) in
+            let searchText = text ?? ""
+            self?.viewModel.filterBy(name: searchText)
+        }).disposed(by: disposeBag)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -113,5 +122,11 @@ extension CharactersViewController: UICollectionViewDataSource {
 extension CharactersViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         searchController.searchBar.endEditing(true)
+    }
+}
+
+extension CharactersViewController: UISearchBarDelegate {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.text = viewModel.nameFilter
     }
 }

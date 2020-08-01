@@ -55,22 +55,22 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="245" height="457"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Esc-oF-3mv">
-                                                    <rect key="frame" x="0.0" y="372" width="245" height="85"/>
+                                                    <rect key="frame" x="0.0" y="372.5" width="245" height="84.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDb-xX-g3P">
-                                                            <rect key="frame" x="59.5" y="8" width="126" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDb-xX-g3P">
+                                                            <rect key="frame" x="60" y="8" width="125.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96m-YH-bKt">
-                                                            <rect key="frame" x="84" y="44" width="77" height="21"/>
+                                                            <rect key="frame" x="84" y="43.5" width="77" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Moth" translatesAutoresizingMaskIntoConstraints="NO" id="bdp-8j-2kw">
-                                                            <rect key="frame" x="53" y="42" width="25" height="25"/>
+                                                            <rect key="frame" x="53" y="41.5" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="bdp-8j-2kw" secondAttribute="height" multiplier="1:1" id="2up-dB-aHb"/>
                                                                 <constraint firstAttribute="width" constant="25" id="edS-Ob-0Ua"/>
@@ -81,9 +81,11 @@
                                                     <constraints>
                                                         <constraint firstItem="96m-YH-bKt" firstAttribute="leading" secondItem="bdp-8j-2kw" secondAttribute="trailing" constant="6" id="012-Fa-qt8"/>
                                                         <constraint firstItem="LDb-xX-g3P" firstAttribute="centerX" secondItem="Esc-oF-3mv" secondAttribute="centerX" id="3yD-DI-Bag"/>
+                                                        <constraint firstItem="LDb-xX-g3P" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Esc-oF-3mv" secondAttribute="leading" constant="8" id="AcD-IE-oPt"/>
                                                         <constraint firstItem="96m-YH-bKt" firstAttribute="top" secondItem="LDb-xX-g3P" secondAttribute="bottom" constant="15" id="Ad2-Sm-Jr8"/>
                                                         <constraint firstItem="LDb-xX-g3P" firstAttribute="top" secondItem="Esc-oF-3mv" secondAttribute="top" constant="8" id="Ece-Cx-i00"/>
                                                         <constraint firstAttribute="bottom" secondItem="96m-YH-bKt" secondAttribute="bottom" constant="20" id="Edp-W8-BXN"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LDb-xX-g3P" secondAttribute="trailing" constant="8" id="Ogj-8c-ud0"/>
                                                         <constraint firstItem="bdp-8j-2kw" firstAttribute="centerY" secondItem="96m-YH-bKt" secondAttribute="centerY" id="bjn-D6-2ji"/>
                                                         <constraint firstItem="96m-YH-bKt" firstAttribute="centerX" secondItem="LDb-xX-g3P" secondAttribute="centerX" id="hL2-ii-ntE"/>
                                                     </constraints>
@@ -134,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-271" y="-285"/>
+            <point key="canvasLocation" x="-271.01449275362319" y="-285.26785714285711"/>
         </scene>
     </scenes>
     <resources>
