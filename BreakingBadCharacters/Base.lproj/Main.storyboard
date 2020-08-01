@@ -149,7 +149,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4fY-3t-LPn">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmb-2n-BmL">
                                 <rect key="frame" x="32" y="32" width="54" height="30"/>
@@ -158,15 +158,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="RWn-T0-hgz" firstAttribute="bottom" secondItem="4fY-3t-LPn" secondAttribute="bottom" id="AFA-HR-tQY"/>
+                            <constraint firstAttribute="bottom" secondItem="4fY-3t-LPn" secondAttribute="bottom" id="AFA-HR-tQY"/>
                             <constraint firstItem="RWn-T0-hgz" firstAttribute="trailing" secondItem="4fY-3t-LPn" secondAttribute="trailing" id="ARs-mR-aVM"/>
-                            <constraint firstItem="4fY-3t-LPn" firstAttribute="top" secondItem="RWn-T0-hgz" secondAttribute="top" id="iDS-jL-qkX"/>
+                            <constraint firstItem="4fY-3t-LPn" firstAttribute="top" secondItem="wX0-E6-hYH" secondAttribute="top" id="iDS-jL-qkX"/>
+                            <constraint firstItem="RWn-T0-hgz" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lmb-2n-BmL" secondAttribute="trailing" constant="8" id="lAy-kZ-xor"/>
                             <constraint firstItem="4fY-3t-LPn" firstAttribute="leading" secondItem="RWn-T0-hgz" secondAttribute="leading" id="mb4-dn-F0T"/>
                             <constraint firstItem="lmb-2n-BmL" firstAttribute="top" secondItem="RWn-T0-hgz" secondAttribute="top" constant="32" id="nSK-L9-eaS"/>
                             <constraint firstItem="lmb-2n-BmL" firstAttribute="leading" secondItem="RWn-T0-hgz" secondAttribute="leading" constant="32" id="ozD-Q6-2Mb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RWn-T0-hgz"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hQl-CJ-ZNu"/>
                     <connections>
                         <outlet property="dismissButton" destination="lmb-2n-BmL" id="SgH-Ae-SRT"/>
                         <outlet property="imageView" destination="4fY-3t-LPn" id="dKp-KK-x7U"/>

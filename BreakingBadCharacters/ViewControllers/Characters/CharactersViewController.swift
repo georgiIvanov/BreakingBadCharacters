@@ -12,7 +12,7 @@ import RxSwift
 class CharactersViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    weak var filterButton: UIButton!
+    var filterButton: UIButton!
     
     var viewModel: CharactersViewModelProtocol!
     var searchController: UISearchController!
@@ -22,10 +22,12 @@ class CharactersViewController: UIViewController {
         }
     }
     
+    let transitionAnimator = PopAnimator()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupFilterButton()
         setupUI()
         bindUI()
         
@@ -53,6 +55,26 @@ class CharactersViewController: UIViewController {
         searchController.searchBar.showsCancelButton = false
         searchController.searchBar.delegate = self
         
+        
+        let stackView = UIStackView(arrangedSubviews: [searchController.searchBar, filterButton])
+        stackView.axis = .horizontal
+        stackView.spacing = 8
+        navigationItem.titleView = stackView
+        definesPresentationContext = true
+        modalPresentationStyle = .overCurrentContext
+        
+        transitionAnimator.dismissCompletion = { [weak self] in
+            guard let selectedIndexPathCell = self?.collectionView.indexPathsForSelectedItems,
+                let selectedCell = self?.collectionView.cellForItem(at: selectedIndexPathCell[0]) as? CharacterCell
+            else {
+              return
+          }
+
+          selectedCell.imageView.isHidden = false
+        }
+    }
+    
+    func setupFilterButton() {
         let filterButton = UIButton()
         self.filterButton = filterButton
         filterButton.setBackgroundImage(UIImage(named: "baseline_filter_alt_white_48pt"), for: .normal)
@@ -76,12 +98,6 @@ class CharactersViewController: UIViewController {
         filterButton.rx.tap.subscribe(onNext: { [weak self] _ in
             self?.performSegue(withIdentifier: "filterBySeasonSegue", sender: self)
         }).disposed(by: disposeBag)
-        let stackView = UIStackView(arrangedSubviews: [searchController.searchBar, filterButton])
-        stackView.axis = .horizontal
-        stackView.spacing = 8
-        navigationItem.titleView = stackView
-        definesPresentationContext = true
-        modalPresentationStyle = .overCurrentContext
     }
     
     func bindUI() {
@@ -106,6 +122,8 @@ class CharactersViewController: UIViewController {
         } else if let detailsVc = segue.destination as? CharacterDetailsViewController,
             let character = sender as? BreakingBadCharacter {
             detailsVc.character = character
+            detailsVc.transitioningDelegate = self
+            detailsVc.modalPresentationStyle = .fullScreen
         }
     }
 }
@@ -142,8 +160,43 @@ extension CharactersViewController: UICollectionViewDelegate {
     }
 }
 
+
+// MARK: - UISearchBarDelegate
+
 extension CharactersViewController: UISearchBarDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBar.text = viewModel.nameFilter
+    }
+}
+
+// MARK: - UIViewControllerTransitioningDelegate
+
+extension CharactersViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController,
+                             presenting: UIViewController,
+                             source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let selectedIndexPathCell = collectionView.indexPathsForSelectedItems,
+            let selectedCell = collectionView.cellForItem(at: selectedIndexPathCell[0]) as? CharacterCell,
+          let selectedCellSuperview = selectedCell.superview
+          else {
+            return nil
+        }
+
+        transitionAnimator.originFrame = selectedCellSuperview.convert(selectedCell.frame, to: nil)
+        transitionAnimator.originFrame = CGRect(
+          x: transitionAnimator.originFrame.origin.x,
+          y: transitionAnimator.originFrame.origin.y,
+          width: transitionAnimator.originFrame.size.width,
+          height: transitionAnimator.originFrame.size.height
+        )
+
+        transitionAnimator.presenting = true
+        selectedCell.imageView.isHidden = true
+        return transitionAnimator
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transitionAnimator.presenting = false
+        return transitionAnimator
     }
 }
