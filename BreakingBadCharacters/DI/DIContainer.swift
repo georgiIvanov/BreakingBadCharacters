@@ -21,7 +21,8 @@ extension DIContainer where Self: AppDelegate {
 
         let container = Container()
         _ = Assembler([ViewControllerAssembly(),
-                       ViewModelAssembly()], container: container)
+                       ViewModelAssembly(),
+                       ServiceAssembly()], container: container)
         return container
     }
 }

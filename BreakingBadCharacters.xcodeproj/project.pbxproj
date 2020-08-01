@@ -18,6 +18,8 @@
 		977AE65224D4747400691DC6 /* ViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977AE65124D4747400691DC6 /* ViewModelAssembly.swift */; };
 		977AE65424D57C9800691DC6 /* BreakingBadCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977AE65324D57C9800691DC6 /* BreakingBadCharacter.swift */; };
 		977AE65624D57FB900691DC6 /* BreakingBadEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977AE65524D57FB900691DC6 /* BreakingBadEndpoint.swift */; };
+		977AE65824D583A300691DC6 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977AE65724D583A300691DC6 /* ServiceAssembly.swift */; };
+		977AE65A24D5874800691DC6 /* BreakingBadApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977AE65924D5874800691DC6 /* BreakingBadApiService.swift */; };
 		9782349D24D44E90001B76E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9782349C24D44E90001B76E5 /* AppDelegate.swift */; };
 		9782349F24D44E90001B76E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9782349E24D44E90001B76E5 /* SceneDelegate.swift */; };
 		978234A424D44E90001B76E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 978234A224D44E90001B76E5 /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		977AE65124D4747400691DC6 /* ViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAssembly.swift; sourceTree = "<group>"; };
 		977AE65324D57C9800691DC6 /* BreakingBadCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadCharacter.swift; sourceTree = "<group>"; };
 		977AE65524D57FB900691DC6 /* BreakingBadEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadEndpoint.swift; sourceTree = "<group>"; };
+		977AE65724D583A300691DC6 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
+		977AE65924D5874800691DC6 /* BreakingBadApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadApiService.swift; sourceTree = "<group>"; };
 		9782349924D44E90001B76E5 /* BreakingBadCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9782349C24D44E90001B76E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9782349E24D44E90001B76E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 				977AE64424D4643F00691DC6 /* DIContainer.swift */,
 				977AE64624D4649500691DC6 /* ViewControllerAssembly.swift */,
 				977AE65124D4747400691DC6 /* ViewModelAssembly.swift */,
+				977AE65724D583A300691DC6 /* ServiceAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 		97DE794124D458FB00BF0C28 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				977AE65924D5874800691DC6 /* BreakingBadApiService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -406,6 +412,7 @@
 				97DE794524D459B900BF0C28 /* CharactersViewController.swift in Sources */,
 				9782349D24D44E90001B76E5 /* AppDelegate.swift in Sources */,
 				977AE64724D4649500691DC6 /* ViewControllerAssembly.swift in Sources */,
+				977AE65824D583A300691DC6 /* ServiceAssembly.swift in Sources */,
 				977AE64524D4643F00691DC6 /* DIContainer.swift in Sources */,
 				977AE65024D4744600691DC6 /* CharactersViewModel.swift in Sources */,
 				977AE65224D4747400691DC6 /* ViewModelAssembly.swift in Sources */,
@@ -413,6 +420,7 @@
 				977AE65624D57FB900691DC6 /* BreakingBadEndpoint.swift in Sources */,
 				977AE64C24D4662700691DC6 /* Storyboard.swift in Sources */,
 				977AE65424D57C9800691DC6 /* BreakingBadCharacter.swift in Sources */,
+				977AE65A24D5874800691DC6 /* BreakingBadApiService.swift in Sources */,
 				977AE64924D4654600691DC6 /* ServiceEntry+DI.swift in Sources */,
 				9782349F24D44E90001B76E5 /* SceneDelegate.swift in Sources */,
 				977AE64324D463EC00691DC6 /* AppDelegate+DI.swift in Sources */,

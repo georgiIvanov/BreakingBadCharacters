@@ -9,13 +9,20 @@
 import Foundation
 
 protocol CharactersViewModelProtocol: class {
-
+    func fetchCharacters()
 }
 
 class CharactersViewModel {
 
+    private let breakingBadService: BreakingBadApiServiceProtocol
+
+    init(breakingBadService: BreakingBadApiServiceProtocol) {
+        self.breakingBadService = breakingBadService
+    }
 }
 
 extension CharactersViewModel: CharactersViewModelProtocol {
+    func fetchCharacters() {
 
+    }
 }

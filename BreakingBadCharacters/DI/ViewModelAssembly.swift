@@ -11,8 +11,8 @@ import Swinject
 class ViewModelAssembly: Assembly {
 
     func assemble(container: Container) {
-        container.register(CharactersViewModelProtocol.self) { _ in
-            return CharactersViewModel()
+        container.register(CharactersViewModelProtocol.self) { res in
+            return CharactersViewModel(breakingBadService: res.resolve(BreakingBadApiServiceProtocol.self)!)
         }
     }
 }
