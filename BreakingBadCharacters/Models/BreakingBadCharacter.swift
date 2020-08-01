@@ -20,4 +20,8 @@ struct BreakingBadCharacter: Codable {
     let portrayed: String
     let category: String
     let betterCallSaulAppearance: [Int]
+    
+    var imageURL: URL? {
+        return URL(string: img)
+    }
 }
