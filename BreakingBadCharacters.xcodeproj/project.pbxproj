@@ -30,6 +30,7 @@
 		978234B424D44E91001B76E5 /* BreakingBadCharactersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978234B324D44E91001B76E5 /* BreakingBadCharactersTests.swift */; };
 		978605FF24D5FD2E00DBCFF9 /* FilterBySeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978605FE24D5FD2E00DBCFF9 /* FilterBySeasonViewController.swift */; };
 		9786060124D600CA00DBCFF9 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9786060024D600CA00DBCFF9 /* FilterButton.swift */; };
+		9786060424D60E4900DBCFF9 /* CharacterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9786060324D60E4900DBCFF9 /* CharacterDetailsViewController.swift */; };
 		97DE794524D459B900BF0C28 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DE794424D459B900BF0C28 /* CharactersViewController.swift */; };
 		BA420812DF0B6F084670FB8E /* Pods_BreakingBadCharacters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5004D7AF101EBF1A76870C42 /* Pods_BreakingBadCharacters.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		978234B524D44E91001B76E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		978605FE24D5FD2E00DBCFF9 /* FilterBySeasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBySeasonViewController.swift; sourceTree = "<group>"; };
 		9786060024D600CA00DBCFF9 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
+		9786060324D60E4900DBCFF9 /* CharacterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewController.swift; sourceTree = "<group>"; };
 		97DE794424D459B900BF0C28 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		98B95CE2FDB628E7CE47F0DB /* Pods_BreakingBadCharactersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakingBadCharactersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC60EC37A1306310220204AE /* Pods-BreakingBadCharacters.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadCharacters.debug.xcconfig"; path = "Target Support Files/Pods-BreakingBadCharacters/Pods-BreakingBadCharacters.debug.xcconfig"; sourceTree = "<group>"; };
@@ -200,9 +202,18 @@
 			path = FilterBySeason;
 			sourceTree = "<group>";
 		};
+		9786060224D60E3500DBCFF9 /* CharacterDetails */ = {
+			isa = PBXGroup;
+			children = (
+				9786060324D60E4900DBCFF9 /* CharacterDetailsViewController.swift */,
+			);
+			path = CharacterDetails;
+			sourceTree = "<group>";
+		};
 		97DE793F24D458ED00BF0C28 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9786060224D60E3500DBCFF9 /* CharacterDetails */,
 				978605FD24D5FD1B00DBCFF9 /* FilterBySeason */,
 				97DE794324D4596600BF0C28 /* Characters */,
 			);
@@ -446,6 +457,7 @@
 				977AE65C24D5A34B00691DC6 /* CharacterCell.swift in Sources */,
 				977AE65A24D5874800691DC6 /* BreakingBadApiService.swift in Sources */,
 				977AE64924D4654600691DC6 /* ServiceEntry+DI.swift in Sources */,
+				9786060424D60E4900DBCFF9 /* CharacterDetailsViewController.swift in Sources */,
 				9782349F24D44E90001B76E5 /* SceneDelegate.swift in Sources */,
 				977AE64324D463EC00691DC6 /* AppDelegate+DI.swift in Sources */,
 			);

@@ -21,6 +21,7 @@ class CharactersViewController: UIViewController {
             collectionView.reloadData()
         }
     }
+    
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -31,6 +32,7 @@ class CharactersViewController: UIViewController {
         viewModel.fetchCharacters()
         
         viewModel.characters.drive(onNext: { [weak self] (characters) in
+            print("Chars in season \(characters.count)")
             self?.characters = characters
         }).disposed(by: disposeBag)
     }
@@ -101,6 +103,9 @@ class CharactersViewController: UIViewController {
             filterVc.filterBySeasons = { [weak self] (seasons) in
                 self?.viewModel.filterBy(seasonAppearance: seasons)
             }
+        } else if let detailsVc = segue.destination as? CharacterDetailsViewController,
+            let character = sender as? BreakingBadCharacter {
+            detailsVc.character = character
         }
     }
 }
@@ -133,6 +138,7 @@ extension CharactersViewController: UICollectionViewDataSource {
 extension CharactersViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         searchController.searchBar.endEditing(true)
+        performSegue(withIdentifier: "characterDetailsSegue", sender: characters[indexPath.item])
     }
 }
 

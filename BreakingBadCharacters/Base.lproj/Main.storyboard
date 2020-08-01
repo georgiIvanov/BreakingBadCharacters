@@ -133,11 +133,48 @@
                     <connections>
                         <outlet property="collectionView" destination="CwY-5G-fFA" id="Bav-Fh-Ejr"/>
                         <segue destination="9ki-J5-zfO" kind="presentation" identifier="filterBySeasonSegue" id="tgh-VV-wRb"/>
+                        <segue destination="Aea-5t-PMM" kind="showDetail" identifier="characterDetailsSegue" id="H0W-c1-184"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-271.01449275362319" y="-285.26785714285711"/>
+        </scene>
+        <!--Character Details View Controller-->
+        <scene sceneID="Wlg-Vo-bgM">
+            <objects>
+                <viewController storyboardIdentifier="CharacterDetailsViewController" id="Aea-5t-PMM" customClass="CharacterDetailsViewController" customModule="BreakingBadCharacters" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wX0-E6-hYH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4fY-3t-LPn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmb-2n-BmL">
+                                <rect key="frame" x="32" y="32" width="54" height="30"/>
+                                <state key="normal" title="Dismiss"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="RWn-T0-hgz" firstAttribute="bottom" secondItem="4fY-3t-LPn" secondAttribute="bottom" id="AFA-HR-tQY"/>
+                            <constraint firstItem="RWn-T0-hgz" firstAttribute="trailing" secondItem="4fY-3t-LPn" secondAttribute="trailing" id="ARs-mR-aVM"/>
+                            <constraint firstItem="4fY-3t-LPn" firstAttribute="top" secondItem="RWn-T0-hgz" secondAttribute="top" id="iDS-jL-qkX"/>
+                            <constraint firstItem="4fY-3t-LPn" firstAttribute="leading" secondItem="RWn-T0-hgz" secondAttribute="leading" id="mb4-dn-F0T"/>
+                            <constraint firstItem="lmb-2n-BmL" firstAttribute="top" secondItem="RWn-T0-hgz" secondAttribute="top" constant="32" id="nSK-L9-eaS"/>
+                            <constraint firstItem="lmb-2n-BmL" firstAttribute="leading" secondItem="RWn-T0-hgz" secondAttribute="leading" constant="32" id="ozD-Q6-2Mb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RWn-T0-hgz"/>
+                    </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="lmb-2n-BmL" id="SgH-Ae-SRT"/>
+                        <outlet property="imageView" destination="4fY-3t-LPn" id="dKp-KK-x7U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BK5-na-Z59" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="500" y="-609"/>
         </scene>
         <!--Filter By Season View Controller-->
         <scene sceneID="sgI-Pr-Qmc">
