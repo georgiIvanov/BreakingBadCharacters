@@ -91,8 +91,11 @@ private func filterCharacters(_ characters: [BreakingBadCharacter],
     }
     
     return characters.filter { (char) -> Bool in
-        return char.appearance.first { (app) -> Bool in
-            return seasonAppearance.contains(app)
-        } != nil
+        for app in seasonAppearance {
+            if char.appearance.contains(app) == false {
+                return false
+            }
+        }
+        return true
     }
 }
