@@ -152,9 +152,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4fY-3t-LPn">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmb-2n-BmL">
-                                <rect key="frame" x="32" y="32" width="54" height="30"/>
-                                <state key="normal" title="Dismiss"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmb-2n-BmL">
+                                <rect key="frame" x="32" y="32" width="38" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lmb-2n-BmL" secondAttribute="height" multiplier="1:1" id="8ac-Ae-IKx"/>
+                                    <constraint firstAttribute="width" constant="38" id="eDU-BB-bXZ"/>
+                                </constraints>
+                                <color key="tintColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94117647059999998" alpha="0.90185335499999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="baseline_cancel_white_48pt"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="beJ-vn-tnQ">
                                 <rect key="frame" x="0.0" y="504" width="414" height="338"/>
@@ -163,17 +168,17 @@
                                 <color key="sectionIndexBackgroundColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94117647059999998" alpha="0.90185335499999997" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="characterDetailNameCell" id="ldA-9G-10H" customClass="CharacterDetailCell" customModule="BreakingBadCharacters" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.5" width="374" height="44.5"/>
+                                        <rect key="frame" x="20" y="55.5" width="374" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ldA-9G-10H" id="gzc-xJ-k44">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kB-fZ-8W1">
-                                                    <rect key="frame" x="102" y="0.0" width="170.5" height="44.5"/>
+                                                    <rect key="frame" x="102" y="0.0" width="170.5" height="45"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="800" text="Field Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xW7-lV-mS8">
-                                                            <rect key="frame" x="22" y="11.5" width="91" height="21"/>
+                                                            <rect key="frame" x="22" y="11.5" width="91" height="21.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -210,7 +215,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="characterDetailCell" id="Zha-a8-zBt" customClass="CharacterDetailCell" customModule="BreakingBadCharacters" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="100" width="374" height="44"/>
+                                        <rect key="frame" x="20" y="100.5" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zha-a8-zBt" id="AC9-o8-8Da">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
@@ -368,6 +373,7 @@
     </scenes>
     <resources>
         <image name="Moth" width="425" height="425"/>
+        <image name="baseline_cancel_white_48pt" width="48" height="48"/>
         <image name="baseline_filter_1_white_48pt" width="48" height="48"/>
         <image name="baseline_filter_2_white_48pt" width="48" height="48"/>
         <image name="baseline_filter_3_white_48pt" width="48" height="48"/>
