@@ -11,6 +11,6 @@
 
 #include "Pods/Target Support Files/Pods-BreakingBadCharactersTests/Pods-BreakingBadCharactersTests.debug.xcconfig"
 
-API_BASE_URL = breakingbadapi.com
+API_BASE_URL = invalid
 
 STUB_RESPONSE = true
