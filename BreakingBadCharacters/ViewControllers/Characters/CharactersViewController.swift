@@ -101,6 +101,15 @@ class CharactersViewController: UIViewController {
         filterButton.rx.tap.subscribe(onNext: { [weak self] _ in
             self?.performSegue(withIdentifier: "filterBySeasonSegue", sender: self)
         }).disposed(by: disposeBag)
+        filterButton.tintColor = AppConfig.mainColodDisabled
+    }
+    
+    func updateFilterButton(seasons: [Int]) {
+        if seasons.count == 0 {
+            filterButton.tintColor = AppConfig.mainColodDisabled
+        } else {
+            filterButton.tintColor = AppConfig.mainColor
+        }
     }
     
     func bindUI() {
@@ -120,6 +129,7 @@ class CharactersViewController: UIViewController {
         if let filterVc = segue.destination as? FilterBySeasonViewController {
             filterVc.currentFilters = viewModel.seasonsFilter
             filterVc.filterBySeasons = { [weak self] (seasons) in
+                self?.updateFilterButton(seasons: seasons)
                 self?.viewModel.filterBy(seasonAppearance: seasons)
             }
         } else if let detailsVc = segue.destination as? CharacterDetailsViewController,

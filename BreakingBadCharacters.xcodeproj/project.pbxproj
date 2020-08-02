@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		96FBBB6CAB005E9C9583C102 /* Pods_BreakingBadCharactersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B95CE2FDB628E7CE47F0DB /* Pods_BreakingBadCharactersTests.framework */; };
 		9708535224D6A037002A0360 /* CharacterDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9708535124D6A037002A0360 /* CharacterDetailCell.swift */; };
+		9708535424D6BB9B002A0360 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9708535324D6BB9B002A0360 /* AppConfig.swift */; };
 		977AE64324D463EC00691DC6 /* AppDelegate+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977AE64224D463EC00691DC6 /* AppDelegate+DI.swift */; };
 		977AE64524D4643F00691DC6 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977AE64424D4643F00691DC6 /* DIContainer.swift */; };
 		977AE64724D4649500691DC6 /* ViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977AE64624D4649500691DC6 /* ViewControllerAssembly.swift */; };
@@ -53,6 +54,7 @@
 		5004D7AF101EBF1A76870C42 /* Pods_BreakingBadCharacters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakingBadCharacters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E8A76836D3E63CBBBD10BC1 /* Pods-BreakingBadCharactersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadCharactersTests.release.xcconfig"; path = "Target Support Files/Pods-BreakingBadCharactersTests/Pods-BreakingBadCharactersTests.release.xcconfig"; sourceTree = "<group>"; };
 		9708535124D6A037002A0360 /* CharacterDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailCell.swift; sourceTree = "<group>"; };
+		9708535324D6BB9B002A0360 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		977AE64224D463EC00691DC6 /* AppDelegate+DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+DI.swift"; sourceTree = "<group>"; };
 		977AE64424D4643F00691DC6 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		977AE64624D4649500691DC6 /* ViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAssembly.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				977AE64D24D4669B00691DC6 /* UIViewController+Extensions.swift */,
 				977AE65524D57FB900691DC6 /* BreakingBadEndpoint.swift */,
 				9786060524D6136B00DBCFF9 /* PopAnimator.swift */,
+				9708535324D6BB9B002A0360 /* AppConfig.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				977AE65C24D5A34B00691DC6 /* CharacterCell.swift in Sources */,
 				9708535224D6A037002A0360 /* CharacterDetailCell.swift in Sources */,
 				977AE65A24D5874800691DC6 /* BreakingBadApiService.swift in Sources */,
+				9708535424D6BB9B002A0360 /* AppConfig.swift in Sources */,
 				977AE64924D4654600691DC6 /* ServiceEntry+DI.swift in Sources */,
 				9786060424D60E4900DBCFF9 /* CharacterDetailsViewController.swift in Sources */,
 				9782349F24D44E90001B76E5 /* SceneDelegate.swift in Sources */,

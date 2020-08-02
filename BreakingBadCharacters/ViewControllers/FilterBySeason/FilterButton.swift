@@ -16,13 +16,21 @@ class FilterButton: UIButton {
     @IBInspectable
     var filterEnabled: Bool = false
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        applyTint()
+    }
+    
     func toggleSelectedState() {
         filterEnabled = !filterEnabled
-        
+        applyTint()
+    }
+    
+    func applyTint() {
         if filterEnabled {
-            tintColor = .systemBlue
+            tintColor = UIColor.white
         } else {
-            tintColor = .white
+            tintColor = UIColor.white.withAlphaComponent(0.5)
         }
     }
 }
