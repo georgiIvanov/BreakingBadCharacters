@@ -24,4 +24,12 @@ struct BreakingBadCharacter: Codable {
     var imageURL: URL? {
         return URL(string: img)
     }
+    
+    func joinOccupations() -> String {
+        return occupation.joined(separator: ", ")
+    }
+    
+    func joinSeasonAppearance() -> String {
+        return appearance.map { "\($0)" }.joined(separator: ", ")
+    }
 }

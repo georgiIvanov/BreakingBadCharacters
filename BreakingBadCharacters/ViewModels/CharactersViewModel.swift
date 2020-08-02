@@ -56,6 +56,7 @@ extension CharactersViewModel: CharactersViewModelProtocol {
         return Observable.combineLatest(fetchedCharacters,
                                         nameFilterSubject,
                                         seasonAppearanceFilterSubject) { (characters, name, seasons) in
+                                    // TODO: Remove characters that are only from Better Call Saul
                                     var result = filterCharacters(characters, byName: name)
                                     result = filterCharacters(result, bySeasons: seasons)
                                     return result

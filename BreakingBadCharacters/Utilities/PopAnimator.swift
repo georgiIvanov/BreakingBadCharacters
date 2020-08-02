@@ -47,7 +47,7 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
           sourceView.clipsToBounds = true
         }
 
-        sourceView.layer.cornerRadius = presenting ? 20.0 : 0.0
+        sourceView.layer.cornerRadius = presenting ? 5.0 : 0.0
         sourceView.layer.masksToBounds = true
         
         containerView.addSubview(toView)
