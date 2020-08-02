@@ -159,7 +159,18 @@ extension CharactersViewController: UICollectionViewDataSource {
 extension CharactersViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         searchController.searchBar.endEditing(true)
-        performSegue(withIdentifier: "characterDetailsSegue", sender: characters[indexPath.item])
+        guard let cell = collectionView.cellForItem(at: indexPath) as? CharacterCell else {
+            return
+        }
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
+            cell.nameContainer.alpha = 0
+        }, completion: { [weak self] _ in
+            guard let slf = self else {
+                return
+            }
+            slf.performSegue(withIdentifier: "characterDetailsSegue", sender: slf.characters[indexPath.item])
+        })
     }
 }
 
@@ -187,8 +198,6 @@ extension CharactersViewController: UIViewControllerTransitioningDelegate {
 
         transitionAnimator.originFrame = selectedCellSuperview.convert(selectedCell.frame, to: nil)
         transitionAnimator.presenting = true
-        selectedCell.nameContainer.alpha = 0
-        selectedCell.imageView.isHidden = true
         return transitionAnimator
     }
     

@@ -11,7 +11,7 @@ import UIKit
 
 class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
-    let duration = 0.8
+    let duration = 0.4
     var presenting = true
     var originFrame = CGRect.zero
     var dismissCompletion: (() -> Void)?
@@ -53,16 +53,11 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         containerView.addSubview(toView)
         containerView.bringSubviewToFront(sourceView)
 
-        UIView.animate(
-          withDuration: duration,
-          delay: 0.0,
-          usingSpringWithDamping: 0.6,
-          initialSpringVelocity: 0.9,
-          animations: {
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseInOut, animations: {
             sourceView.transform = self.presenting ? .identity : scaleTransform
             sourceView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
             sourceView.layer.cornerRadius = !self.presenting ? 5.0 : 0.0
-          }, completion: { _ in
+        }, completion: { _ in
             if !self.presenting {
               self.dismissCompletion?()
             }

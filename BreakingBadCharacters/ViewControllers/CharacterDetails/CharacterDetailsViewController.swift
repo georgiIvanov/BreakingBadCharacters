@@ -16,6 +16,8 @@ class CharacterDetailsViewController: UIViewController {
     
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
     
     var character: BreakingBadCharacter!
     let disposeBag = DisposeBag()
@@ -23,12 +25,39 @@ class CharacterDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dismissButton.alpha = 0
         dismissButton.rx.tap.subscribe(onNext: { [weak self] _ in
             self?.dismissButton.isHidden = true
-            self?.dismiss(animated: true, completion: nil)
+            self?.view.layoutIfNeeded()
+            UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseInOut, animations: {
+                guard let slf = self else {
+                    return
+                }
+                
+                slf.tableViewBottomConstraint.constant = -slf.tableView.bounds.size.height
+                slf.view.layoutIfNeeded()
+            }, completion: { [weak self] _ in
+                self?.dismiss(animated: true, completion: nil)
+            })
         }).disposed(by: disposeBag)
         
         imageView.kf.setImage(with: character.imageURL)
+        
+        tableViewBottomConstraint.constant = -tableView.bounds.size.height
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.4) { [weak self] in
+            self?.tableViewBottomConstraint.constant = 0
+            self?.view.layoutIfNeeded()
+        }
+        
+        UIView.animate(withDuration: 0.4, delay: 0.4, options: .curveEaseInOut, animations: { [weak self] in
+            self?.dismissButton.alpha = 1
+        })
     }
 }
 
