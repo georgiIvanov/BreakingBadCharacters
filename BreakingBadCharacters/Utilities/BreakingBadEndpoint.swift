@@ -35,8 +35,10 @@ extension BreakingBadEndpoint: TargetType {
     }
 
     var sampleData: Data {
-        // TODO: Add stub response
-        return Data()
+        switch self {
+        case .characters:
+            return Data.jsonData(fileName: "AllCharacters") ?? Data()
+        }
     }
 
     var task: Task {

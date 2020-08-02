@@ -31,7 +31,12 @@ private extension ServiceAssembly {
 
                 let manager = Session.init(configuration: configuration)
 
-                return BreakingBadApi(session: manager)
+                if AppConfig.stubResponses {
+                    return BreakingBadApi(stubClosure: BreakingBadApi.delayedStub(0.1),
+                                          session: manager)
+                } else {
+                    return BreakingBadApi(session: manager)
+                }
             }.singleton()
         }
 }

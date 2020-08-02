@@ -101,5 +101,5 @@ private func filterCharacters(_ characters: [BreakingBadCharacter],
 }
 
 private func filterCharactersFromBetterCallSaul(_ characters: [BreakingBadCharacter]) -> [BreakingBadCharacter] {
-    return characters.filter { !$0.appearsOnlyInBetterCallSaul() }
+    return characters.filter { $0.appearsOnlyInBetterCallSaul() == false }
 }
