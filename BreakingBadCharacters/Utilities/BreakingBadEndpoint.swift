@@ -17,7 +17,7 @@ enum BreakingBadEndpoint {
 
 extension BreakingBadEndpoint: TargetType {
     var baseURL: URL {
-        return URL(string: "https://breakingbadapi.com/api/")!
+        return URL(string: "https://\(AppConfig.apiBaseUrl)/api/")!
     }
 
     var path: String {
