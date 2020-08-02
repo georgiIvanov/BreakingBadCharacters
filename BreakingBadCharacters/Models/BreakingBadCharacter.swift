@@ -32,4 +32,8 @@ struct BreakingBadCharacter: Codable {
     func joinSeasonAppearance() -> String {
         return appearance.map { "\($0)" }.joined(separator: ", ")
     }
+    
+    func appearsOnlyInBetterCallSaul() -> Bool {
+        return appearance.count == 0 && betterCallSaulAppearance.count > 0
+    }
 }

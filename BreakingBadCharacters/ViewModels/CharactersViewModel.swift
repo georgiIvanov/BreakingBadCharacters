@@ -56,9 +56,9 @@ extension CharactersViewModel: CharactersViewModelProtocol {
         return Observable.combineLatest(fetchedCharacters,
                                         nameFilterSubject,
                                         seasonAppearanceFilterSubject) { (characters, name, seasons) in
-                                    // TODO: Remove characters that are only from Better Call Saul
                                     var result = filterCharacters(characters, byName: name)
                                     result = filterCharacters(result, bySeasons: seasons)
+                                    result = filterCharactersFromBetterCallSaul(result)
                                     return result
         }.asDriver(onErrorJustReturn: [])
     }
@@ -98,4 +98,8 @@ private func filterCharacters(_ characters: [BreakingBadCharacter],
         }
         return true
     }
+}
+
+private func filterCharactersFromBetterCallSaul(_ characters: [BreakingBadCharacter]) -> [BreakingBadCharacter] {
+    return characters.filter { !$0.appearsOnlyInBetterCallSaul() }
 }
