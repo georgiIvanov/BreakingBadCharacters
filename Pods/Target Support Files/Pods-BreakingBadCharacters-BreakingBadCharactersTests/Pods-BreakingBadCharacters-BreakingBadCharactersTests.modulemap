@@ -1,0 +1,6 @@
+framework module Pods_BreakingBadCharacters_BreakingBadCharactersTests {
+  umbrella header "Pods-BreakingBadCharacters-BreakingBadCharactersTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

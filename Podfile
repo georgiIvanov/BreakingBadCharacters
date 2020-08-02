@@ -18,7 +18,7 @@ target 'BreakingBadCharacters' do
   # Pods for BreakingBadCharacters
 
   target 'BreakingBadCharactersTests' do
-    inherit! :search_paths
+    inherit! :complete
     # Pods for testing
   end
 

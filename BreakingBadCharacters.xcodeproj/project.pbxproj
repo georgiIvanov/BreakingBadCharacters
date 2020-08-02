@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96FBBB6CAB005E9C9583C102 /* Pods_BreakingBadCharactersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B95CE2FDB628E7CE47F0DB /* Pods_BreakingBadCharactersTests.framework */; };
 		9708535224D6A037002A0360 /* CharacterDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9708535124D6A037002A0360 /* CharacterDetailCell.swift */; };
 		9708535424D6BB9B002A0360 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9708535324D6BB9B002A0360 /* AppConfig.swift */; };
 		9767C22A24D750B700A2C659 /* AllCharacters.json in Resources */ = {isa = PBXBuildFile; fileRef = 9767C22924D750B700A2C659 /* AllCharacters.json */; };
@@ -39,6 +38,7 @@
 		9786060624D6136B00DBCFF9 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9786060524D6136B00DBCFF9 /* PopAnimator.swift */; };
 		97DE794524D459B900BF0C28 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DE794424D459B900BF0C28 /* CharactersViewController.swift */; };
 		BA420812DF0B6F084670FB8E /* Pods_BreakingBadCharacters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5004D7AF101EBF1A76870C42 /* Pods_BreakingBadCharacters.framework */; };
+		C006C6742D109B817AAB10C4 /* Pods_BreakingBadCharacters_BreakingBadCharactersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3273F18701183C430ACFA443 /* Pods_BreakingBadCharacters_BreakingBadCharactersTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06840E366DF76E331B643F8F /* Pods-BreakingBadCharacters-BreakingBadCharactersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadCharacters-BreakingBadCharactersTests.release.xcconfig"; path = "Target Support Files/Pods-BreakingBadCharacters-BreakingBadCharactersTests/Pods-BreakingBadCharacters-BreakingBadCharactersTests.release.xcconfig"; sourceTree = "<group>"; };
 		0F3CC7C6DCA593557C55F98F /* Pods-BreakingBadCharacters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadCharacters.release.xcconfig"; path = "Target Support Files/Pods-BreakingBadCharacters/Pods-BreakingBadCharacters.release.xcconfig"; sourceTree = "<group>"; };
 		10E1D422C6E0715A8AE1F617 /* Pods-BreakingBadCharactersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadCharactersTests.debug.xcconfig"; path = "Target Support Files/Pods-BreakingBadCharactersTests/Pods-BreakingBadCharactersTests.debug.xcconfig"; sourceTree = "<group>"; };
+		13B86BCDDC42210E93286D50 /* Pods-BreakingBadCharacters-BreakingBadCharactersTests.xctest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadCharacters-BreakingBadCharactersTests.xctest.xcconfig"; path = "Target Support Files/Pods-BreakingBadCharacters-BreakingBadCharactersTests/Pods-BreakingBadCharacters-BreakingBadCharactersTests.xctest.xcconfig"; sourceTree = "<group>"; };
+		2880CD94B1BBB9787EF29952 /* Pods-BreakingBadCharacters-BreakingBadCharactersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadCharacters-BreakingBadCharactersTests.debug.xcconfig"; path = "Target Support Files/Pods-BreakingBadCharacters-BreakingBadCharactersTests/Pods-BreakingBadCharacters-BreakingBadCharactersTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3273F18701183C430ACFA443 /* Pods_BreakingBadCharacters_BreakingBadCharactersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakingBadCharacters_BreakingBadCharactersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B6201AFEBC5101257D330EB /* Pods-BreakingBadCharacters.xctest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadCharacters.xctest.xcconfig"; path = "Target Support Files/Pods-BreakingBadCharacters/Pods-BreakingBadCharacters.xctest.xcconfig"; sourceTree = "<group>"; };
 		5004D7AF101EBF1A76870C42 /* Pods_BreakingBadCharacters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakingBadCharacters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E8A76836D3E63CBBBD10BC1 /* Pods-BreakingBadCharactersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadCharactersTests.release.xcconfig"; path = "Target Support Files/Pods-BreakingBadCharactersTests/Pods-BreakingBadCharactersTests.release.xcconfig"; sourceTree = "<group>"; };
 		9708535124D6A037002A0360 /* CharacterDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailCell.swift; sourceTree = "<group>"; };
@@ -92,7 +97,6 @@
 		9786060324D60E4900DBCFF9 /* CharacterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewController.swift; sourceTree = "<group>"; };
 		9786060524D6136B00DBCFF9 /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		97DE794424D459B900BF0C28 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
-		98B95CE2FDB628E7CE47F0DB /* Pods_BreakingBadCharactersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakingBadCharactersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC60EC37A1306310220204AE /* Pods-BreakingBadCharacters.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadCharacters.debug.xcconfig"; path = "Target Support Files/Pods-BreakingBadCharacters/Pods-BreakingBadCharacters.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96FBBB6CAB005E9C9583C102 /* Pods_BreakingBadCharactersTests.framework in Frameworks */,
+				C006C6742D109B817AAB10C4 /* Pods_BreakingBadCharacters_BreakingBadCharactersTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +127,10 @@
 				0F3CC7C6DCA593557C55F98F /* Pods-BreakingBadCharacters.release.xcconfig */,
 				10E1D422C6E0715A8AE1F617 /* Pods-BreakingBadCharactersTests.debug.xcconfig */,
 				7E8A76836D3E63CBBBD10BC1 /* Pods-BreakingBadCharactersTests.release.xcconfig */,
+				4B6201AFEBC5101257D330EB /* Pods-BreakingBadCharacters.xctest.xcconfig */,
+				2880CD94B1BBB9787EF29952 /* Pods-BreakingBadCharacters-BreakingBadCharactersTests.debug.xcconfig */,
+				13B86BCDDC42210E93286D50 /* Pods-BreakingBadCharacters-BreakingBadCharactersTests.xctest.xcconfig */,
+				06840E366DF76E331B643F8F /* Pods-BreakingBadCharacters-BreakingBadCharactersTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -131,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				5004D7AF101EBF1A76870C42 /* Pods_BreakingBadCharacters.framework */,
-				98B95CE2FDB628E7CE47F0DB /* Pods_BreakingBadCharactersTests.framework */,
+				3273F18701183C430ACFA443 /* Pods_BreakingBadCharacters_BreakingBadCharactersTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -315,6 +323,7 @@
 				978234AB24D44E91001B76E5 /* Sources */,
 				978234AC24D44E91001B76E5 /* Frameworks */,
 				978234AD24D44E91001B76E5 /* Resources */,
+				E74040C9EB04B619EF2D571B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -458,11 +467,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BreakingBadCharactersTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-BreakingBadCharacters-BreakingBadCharactersTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E74040C9EB04B619EF2D571B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BreakingBadCharacters-BreakingBadCharactersTests/Pods-BreakingBadCharacters-BreakingBadCharactersTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BreakingBadCharacters-BreakingBadCharactersTests/Pods-BreakingBadCharacters-BreakingBadCharactersTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BreakingBadCharacters-BreakingBadCharactersTests/Pods-BreakingBadCharacters-BreakingBadCharactersTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -539,6 +565,7 @@
 /* Begin XCBuildConfiguration section */
 		974AEFCA24D769B7007DFA1A /* XCTest */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 972545F624D7461000BAAC84 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -792,7 +819,7 @@
 		};
 		978234BC24D44E91001B76E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10E1D422C6E0715A8AE1F617 /* Pods-BreakingBadCharactersTests.debug.xcconfig */;
+			baseConfigurationReference = 2880CD94B1BBB9787EF29952 /* Pods-BreakingBadCharacters-BreakingBadCharactersTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -814,7 +841,7 @@
 		};
 		978234BD24D44E91001B76E5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E8A76836D3E63CBBBD10BC1 /* Pods-BreakingBadCharactersTests.release.xcconfig */;
+			baseConfigurationReference = 06840E366DF76E331B643F8F /* Pods-BreakingBadCharacters-BreakingBadCharactersTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
