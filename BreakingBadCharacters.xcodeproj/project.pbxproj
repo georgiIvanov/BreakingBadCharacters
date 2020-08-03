@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9708535224D6A037002A0360 /* CharacterDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9708535124D6A037002A0360 /* CharacterDetailCell.swift */; };
 		9708535424D6BB9B002A0360 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9708535324D6BB9B002A0360 /* AppConfig.swift */; };
+		973F52A324D84D970058A0DF /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F52A224D84D970058A0DF /* ErrorMessageView.swift */; };
 		974AEFCE24D76ADD007DFA1A /* CharactersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974AEFCD24D76ADD007DFA1A /* CharactersViewModelTests.swift */; };
 		9767C22A24D750B700A2C659 /* AllCharacters.json in Resources */ = {isa = PBXBuildFile; fileRef = 9767C22924D750B700A2C659 /* AllCharacters.json */; };
 		9767C22C24D7532200A2C659 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9767C22B24D7532200A2C659 /* Data+Extensions.swift */; };
@@ -66,6 +67,7 @@
 		972545F624D7461000BAAC84 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		972545F724D7461E00BAAC84 /* UnitTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = UnitTests.xcconfig; sourceTree = "<group>"; };
 		972545F824D7495200BAAC84 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		973F52A224D84D970058A0DF /* ErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
 		974AEFCD24D76ADD007DFA1A /* CharactersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModelTests.swift; sourceTree = "<group>"; };
 		9767C22924D750B700A2C659 /* AllCharacters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllCharacters.json; sourceTree = "<group>"; };
 		9767C22B24D7532200A2C659 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				97DE794424D459B900BF0C28 /* CharactersViewController.swift */,
 				977AE65B24D5A34B00691DC6 /* CharacterCell.swift */,
 				977AE65D24D5A6CD00691DC6 /* ZoomAndSnapFlowLayout.swift */,
+				973F52A224D84D970058A0DF /* ErrorMessageView.swift */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				9708535424D6BB9B002A0360 /* AppConfig.swift in Sources */,
 				977AE64924D4654600691DC6 /* ServiceEntry+DI.swift in Sources */,
 				9786060424D60E4900DBCFF9 /* CharacterDetailsViewController.swift in Sources */,
+				973F52A324D84D970058A0DF /* ErrorMessageView.swift in Sources */,
 				9767C22C24D7532200A2C659 /* Data+Extensions.swift in Sources */,
 				9782349F24D44E90001B76E5 /* SceneDelegate.swift in Sources */,
 				977AE64324D463EC00691DC6 /* AppDelegate+DI.swift in Sources */,

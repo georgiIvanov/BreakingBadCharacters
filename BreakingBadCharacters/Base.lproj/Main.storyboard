@@ -34,6 +34,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aa2-oV-mec" customClass="ErrorMessageView" customModule="BreakingBadCharacters" customModuleProvider="target">
+                                <rect key="frame" x="87" y="411" width="240" height="74.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ir4-f0-tem">
+                                        <rect key="frame" x="29.5" y="8" width="181" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e61-3T-snF">
+                                        <rect key="frame" x="83" y="36.5" width="74" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Try again?">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94117647059999998" alpha="0.90185335499999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Ir4-f0-tem" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aa2-oV-mec" secondAttribute="leading" constant="4" id="Eie-mq-fTZ"/>
+                                    <constraint firstItem="e61-3T-snF" firstAttribute="centerX" secondItem="aa2-oV-mec" secondAttribute="centerX" id="Fb5-hp-78P"/>
+                                    <constraint firstItem="e61-3T-snF" firstAttribute="top" secondItem="Ir4-f0-tem" secondAttribute="bottom" constant="8" id="NRT-DT-Qyd"/>
+                                    <constraint firstItem="Ir4-f0-tem" firstAttribute="centerX" secondItem="aa2-oV-mec" secondAttribute="centerX" id="OLN-qf-3YK"/>
+                                    <constraint firstAttribute="bottom" secondItem="e61-3T-snF" secondAttribute="bottom" constant="8" id="TH9-7y-5q3"/>
+                                    <constraint firstItem="Ir4-f0-tem" firstAttribute="top" secondItem="aa2-oV-mec" secondAttribute="top" constant="8" id="agQ-8t-KHo"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ir4-f0-tem" secondAttribute="trailing" constant="4" id="xPO-8y-aJN"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="messageLabel" destination="Ir4-f0-tem" id="WJw-ap-gg2"/>
+                                    <outlet property="tryAgainButton" destination="e61-3T-snF" id="QIa-1I-E8W"/>
+                                </connections>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CwY-5G-fFA">
                                 <rect key="frame" x="0.0" y="168" width="414" height="614"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -128,8 +165,11 @@
                         <color key="backgroundColor" red="0.11372549019607843" green="0.30196078431372547" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mH8-kK-9pJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5FB-eK-otz"/>
+                            <constraint firstItem="aa2-oV-mec" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.57971" id="7fU-Ch-7rF"/>
+                            <constraint firstItem="aa2-oV-mec" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="C1Q-OS-uNX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CwY-5G-fFA" secondAttribute="bottom" constant="80" id="HrX-BL-Cal"/>
                             <constraint firstItem="mH8-kK-9pJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Oow-TZ-Uh6"/>
+                            <constraint firstItem="aa2-oV-mec" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aLL-z3-OAB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CwY-5G-fFA" secondAttribute="trailing" id="gw2-Hx-23B"/>
                             <constraint firstItem="CwY-5G-fFA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="od6-z4-9dc"/>
                             <constraint firstItem="CwY-5G-fFA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rZI-2k-itZ"/>
@@ -140,6 +180,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="mH8-kK-9pJ" id="KIM-jP-Vuj"/>
                         <outlet property="collectionView" destination="CwY-5G-fFA" id="Bav-Fh-Ejr"/>
+                        <outlet property="errorMessageView" destination="aa2-oV-mec" id="CMB-UX-btI"/>
                         <segue destination="9ki-J5-zfO" kind="presentation" identifier="filterBySeasonSegue" id="tgh-VV-wRb"/>
                         <segue destination="Aea-5t-PMM" kind="showDetail" identifier="characterDetailsSegue" id="H0W-c1-184"/>
                     </connections>

@@ -12,6 +12,7 @@ import RxSwift
 class CharactersViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var errorMessageView: ErrorMessageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var filterButton: UIButton!
@@ -80,6 +81,12 @@ class CharactersViewController: UIViewController {
                 selectedCell.nameContainer.alpha = 1
             })
         }
+        
+        errorMessageView.alpha = 0
+        errorMessageView.tryAgainButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            self?.viewModel.fetchCharacters()
+            self?.activityIndicator.startAnimating()
+        }).disposed(by: disposeBag)
     }
     
     func setupFilterButton() {
