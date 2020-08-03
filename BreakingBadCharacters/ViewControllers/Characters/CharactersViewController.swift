@@ -12,10 +12,13 @@ import RxSwift
 class CharactersViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var filterButton: UIButton!
     
     var viewModel: CharactersViewModelProtocol!
     var searchController: UISearchController!
+    
     var characters: [BreakingBadCharacter] = [] {
         didSet {
             collectionView.reloadData()
@@ -36,7 +39,9 @@ class CharactersViewController: UIViewController {
         viewModel.characters.drive(onNext: { [weak self] (characters) in
             print("Chars in season \(characters.count)")
             self?.characters = characters
+            self?.activityIndicator.stopAnimating()
         }).disposed(by: disposeBag)
+        activityIndicator.startAnimating()
     }
     
     func setupUI() {

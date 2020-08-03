@@ -43,7 +43,7 @@ class CharacterDetailsViewController: UIViewController {
         
         imageView.kf.setImage(with: character.imageURL)
         
-        tableViewBottomConstraint.constant = -tableView.bounds.size.height
+        tableViewBottomConstraint.constant = -(tableView.bounds.size.height + 30)
     }
     
     override func viewDidAppear(_ animated: Bool) {
