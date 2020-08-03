@@ -18,4 +18,16 @@ class ErrorMessageView: UIView {
         layer.borderWidth = 3
         layer.borderColor = AppConfig.mainColorLight.cgColor
     }
+    
+    func displayErrorMessage() {
+        UIView.animate(withDuration: 0.4) {
+            self.alpha = 1
+        }
+    }
+    
+    func hideErrorMessage() {
+        UIView.animate(withDuration: 0.4) {
+            self.alpha = 0
+        }
+    }
 }

@@ -27,7 +27,7 @@ class CharactersViewModelTests: XCTestCase {
         
         let vm = container.resolve(CharactersViewModelProtocol.self)!
         vm.fetchCharacters()
-        vm.characters.drive(onNext: { (all) in
+        vm.characters.subscribe(onNext: { (all) in
             XCTAssertEqual(all.count, 57)
             expectation.fulfill()
         }).disposed(by: disposeBag)
@@ -41,7 +41,7 @@ class CharactersViewModelTests: XCTestCase {
         let vm = container.resolve(CharactersViewModelProtocol.self)!
         vm.fetchCharacters()
         vm.filterBy(name: "Gu")
-        vm.characters.drive(onNext: { (chars) in
+        vm.characters.subscribe(onNext: { (chars) in
             XCTAssertEqual(chars.count, 1)
             expectation.fulfill()
         }).disposed(by: disposeBag)
@@ -57,7 +57,7 @@ class CharactersViewModelTests: XCTestCase {
         vm.filterBy(name: "Gu")
         vm.filterBy(seasonAppearance: [1, 5])
         
-        vm.characters.drive(onNext: { (chars) in
+        vm.characters.subscribe(onNext: { (chars) in
             XCTAssertEqual(chars.count, 0)
             expectation.fulfill()
         }).disposed(by: disposeBag)
@@ -73,7 +73,7 @@ class CharactersViewModelTests: XCTestCase {
         vm.filterBy(name: "Tod")
         vm.filterBy(seasonAppearance: [5])
         
-        vm.characters.drive(onNext: { (chars) in
+        vm.characters.subscribe(onNext: { (chars) in
             XCTAssertEqual(chars.count, 1)
             expectation.fulfill()
         }).disposed(by: disposeBag)
@@ -88,7 +88,7 @@ class CharactersViewModelTests: XCTestCase {
         vm.fetchCharacters()
         vm.filterBy(seasonAppearance: [3])
         
-        vm.characters.drive(onNext: { (chars) in
+        vm.characters.subscribe(onNext: { (chars) in
             XCTAssertEqual(chars.count, 40)
             expectation.fulfill()
         }).disposed(by: disposeBag)
@@ -103,7 +103,7 @@ class CharactersViewModelTests: XCTestCase {
         vm.fetchCharacters()
         vm.filterBy(seasonAppearance: [3, 5])
         
-        vm.characters.drive(onNext: { (chars) in
+        vm.characters.subscribe(onNext: { (chars) in
             XCTAssertEqual(chars.count, 20)
             expectation.fulfill()
         }).disposed(by: disposeBag)
@@ -120,7 +120,7 @@ class CharactersViewModelTests: XCTestCase {
         vm.filterBy(name: searchName)
         vm.filterBy(seasonAppearance: [2])
         
-        vm.characters.drive(onNext: { (chars) in
+        vm.characters.subscribe(onNext: { (chars) in
             XCTAssertEqual(chars.count, 3)
             chars.forEach { (char) in
                 XCTAssert(char.name.localizedCaseInsensitiveContains(searchName))
@@ -141,7 +141,7 @@ class CharactersViewModelTests: XCTestCase {
         vm.filterBy(seasonAppearance: [1, 2])
         vm.filterBy(name: "")
         
-        vm.characters.drive(onNext: { (chars) in
+        vm.characters.subscribe(onNext: { (chars) in
             XCTAssertEqual(chars.count, 20)
             expectation.fulfill()
         }).disposed(by: disposeBag)

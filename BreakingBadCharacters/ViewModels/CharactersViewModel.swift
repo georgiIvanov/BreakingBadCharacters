@@ -15,7 +15,7 @@ protocol CharactersViewModelProtocol: class {
     func filterBy(name: String)
     func filterBy(seasonAppearance: [Int])
     
-    var characters: Driver<[BreakingBadCharacter]> { get }
+    var characters: Observable<[BreakingBadCharacter]> { get }
     var nameFilter: String { get }
     var seasonsFilter: [Int] { get }
 }
@@ -36,12 +36,10 @@ class CharactersViewModel {
 
 extension CharactersViewModel: CharactersViewModelProtocol {
     func fetchCharacters() {
-        breakingBadService.fetchCharacters().subscribe(onSuccess: { [weak self] (characters) in
-            self?.fetchedCharacters.onNext(characters)
-        }, onError: { (error) in
-            // TODO: Propagate error
-            print(error)
-        }).disposed(by: disposeBag)
+        breakingBadService.fetchCharacters()
+        .asObservable()
+        .bind(to: fetchedCharacters)
+        .disposed(by: disposeBag)
     }
     
     func filterBy(name: String) {
@@ -52,7 +50,7 @@ extension CharactersViewModel: CharactersViewModelProtocol {
         seasonAppearanceFilterSubject.onNext(seasonAppearance)
     }
 
-    var characters: Driver<[BreakingBadCharacter]> {
+    var characters: Observable<[BreakingBadCharacter]> {
         return Observable.combineLatest(fetchedCharacters,
                                         nameFilterSubject,
                                         seasonAppearanceFilterSubject) { (characters, name, seasons) in
@@ -60,7 +58,7 @@ extension CharactersViewModel: CharactersViewModelProtocol {
                                     result = filterCharacters(result, bySeasons: seasons)
                                     result = filterCharactersFromBetterCallSaul(result)
                                     return result
-        }.asDriver(onErrorJustReturn: [])
+        }
     }
     
     var nameFilter: String {

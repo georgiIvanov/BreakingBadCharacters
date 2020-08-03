@@ -36,12 +36,8 @@ class CharactersViewController: UIViewController {
         bindUI()
         
         viewModel.fetchCharacters()
+        subscribeForCharacters()
         
-        viewModel.characters.drive(onNext: { [weak self] (characters) in
-            print("Chars in season \(characters.count)")
-            self?.characters = characters
-            self?.activityIndicator.stopAnimating()
-        }).disposed(by: disposeBag)
         activityIndicator.startAnimating()
     }
     
@@ -86,6 +82,8 @@ class CharactersViewController: UIViewController {
         errorMessageView.tryAgainButton.rx.tap.subscribe(onNext: { [weak self] _ in
             self?.viewModel.fetchCharacters()
             self?.activityIndicator.startAnimating()
+            self?.errorMessageView.hideErrorMessage()
+            self?.subscribeForCharacters()
         }).disposed(by: disposeBag)
     }
     
@@ -122,6 +120,22 @@ class CharactersViewController: UIViewController {
         } else {
             filterButton.tintColor = AppConfig.mainColor
         }
+    }
+    
+    func subscribeForCharacters() {
+        viewModel.characters.subscribe(onNext: { [weak self] (characters) in
+            print("Returned characters count: \(characters.count)")
+            self?.characters = characters
+            self?.activityIndicator.stopAnimating()
+        }, onError: { [weak self] (_) in
+            guard let slf = self else {
+                return
+            }
+            
+            slf.view.bringSubviewToFront(slf.errorMessageView)
+            slf.errorMessageView.displayErrorMessage()
+            slf.activityIndicator.stopAnimating()
+        }).disposed(by: disposeBag)
     }
     
     func bindUI() {
