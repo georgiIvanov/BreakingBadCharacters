@@ -34,6 +34,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mlh-ZF-r7j" userLabel="NoContentView">
+                                <rect key="frame" x="87" y="358.5" width="240" height="179"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="700" image="CharacterNotFound" translatesAutoresizingMaskIntoConstraints="NO" id="6mz-xo-A3Y">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="121"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Characters Found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WL6-ta-QB9">
+                                        <rect key="frame" x="48.5" y="154" width="143" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="6mz-xo-A3Y" firstAttribute="top" secondItem="Mlh-ZF-r7j" secondAttribute="top" id="1cf-kD-rhz"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WL6-ta-QB9" secondAttribute="bottom" constant="8" id="3tI-mW-1dT"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WL6-ta-QB9" secondAttribute="trailing" constant="8" id="9wk-iG-c6r"/>
+                                    <constraint firstAttribute="trailing" secondItem="6mz-xo-A3Y" secondAttribute="trailing" id="RZ7-cN-4fZ"/>
+                                    <constraint firstItem="WL6-ta-QB9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mlh-ZF-r7j" secondAttribute="leading" constant="8" id="rNv-0M-9Sa"/>
+                                    <constraint firstItem="6mz-xo-A3Y" firstAttribute="leading" secondItem="Mlh-ZF-r7j" secondAttribute="leading" id="sKl-2c-Xyd"/>
+                                    <constraint firstItem="WL6-ta-QB9" firstAttribute="top" secondItem="6mz-xo-A3Y" secondAttribute="bottom" constant="33" id="tfZ-8Y-ROY"/>
+                                    <constraint firstItem="WL6-ta-QB9" firstAttribute="centerX" secondItem="Mlh-ZF-r7j" secondAttribute="centerX" id="tyN-ax-2jE"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aa2-oV-mec" customClass="ErrorMessageView" customModule="BreakingBadCharacters" customModuleProvider="target">
                                 <rect key="frame" x="87" y="411" width="240" height="74.5"/>
                                 <subviews>
@@ -63,7 +88,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="8"/>
+                                        <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -167,12 +192,16 @@
                             <constraint firstItem="mH8-kK-9pJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5FB-eK-otz"/>
                             <constraint firstItem="aa2-oV-mec" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.57971" id="7fU-Ch-7rF"/>
                             <constraint firstItem="aa2-oV-mec" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="C1Q-OS-uNX"/>
+                            <constraint firstItem="Mlh-ZF-r7j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CWI-AN-lE0"/>
+                            <constraint firstItem="Mlh-ZF-r7j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F4i-rj-B0C"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CwY-5G-fFA" secondAttribute="bottom" constant="80" id="HrX-BL-Cal"/>
                             <constraint firstItem="mH8-kK-9pJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Oow-TZ-Uh6"/>
                             <constraint firstItem="aa2-oV-mec" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aLL-z3-OAB"/>
+                            <constraint firstItem="Mlh-ZF-r7j" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.57971" id="dba-kg-Sxn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CwY-5G-fFA" secondAttribute="trailing" id="gw2-Hx-23B"/>
                             <constraint firstItem="CwY-5G-fFA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="od6-z4-9dc"/>
                             <constraint firstItem="CwY-5G-fFA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rZI-2k-itZ"/>
+                            <constraint firstItem="Mlh-ZF-r7j" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="uib-Zc-idL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -181,6 +210,7 @@
                         <outlet property="activityIndicator" destination="mH8-kK-9pJ" id="KIM-jP-Vuj"/>
                         <outlet property="collectionView" destination="CwY-5G-fFA" id="Bav-Fh-Ejr"/>
                         <outlet property="errorMessageView" destination="aa2-oV-mec" id="CMB-UX-btI"/>
+                        <outlet property="noContentView" destination="Mlh-ZF-r7j" id="cxW-L1-k1g"/>
                         <segue destination="9ki-J5-zfO" kind="presentation" identifier="filterBySeasonSegue" id="tgh-VV-wRb"/>
                         <segue destination="Aea-5t-PMM" kind="showDetail" identifier="characterDetailsSegue" id="H0W-c1-184"/>
                     </connections>
@@ -420,6 +450,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CharacterNotFound" width="512" height="512"/>
         <image name="Moth" width="425" height="425"/>
         <image name="baseline_cancel_white_48pt" width="48" height="48"/>
         <image name="baseline_filter_1_white_48pt" width="48" height="48"/>

@@ -14,6 +14,7 @@ class CharactersViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var errorMessageView: ErrorMessageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var noContentView: UIView!
     
     var filterButton: UIButton!
     
@@ -82,7 +83,7 @@ class CharactersViewController: UIViewController {
         errorMessageView.tryAgainButton.rx.tap.subscribe(onNext: { [weak self] _ in
             self?.viewModel.fetchCharacters()
             self?.activityIndicator.startAnimating()
-            self?.errorMessageView.hideErrorMessage()
+            self?.errorMessageView.animateViewAlphaToDisappear()
             self?.subscribeForCharacters()
         }).disposed(by: disposeBag)
     }
@@ -125,17 +126,28 @@ class CharactersViewController: UIViewController {
     func subscribeForCharacters() {
         viewModel.characters.subscribe(onNext: { [weak self] (characters) in
             print("Returned characters count: \(characters.count)")
-            self?.characters = characters
-            self?.activityIndicator.stopAnimating()
+            self?.receivedCharacters(characters)
         }, onError: { [weak self] (_) in
             guard let slf = self else {
                 return
             }
             
             slf.view.bringSubviewToFront(slf.errorMessageView)
-            slf.errorMessageView.displayErrorMessage()
+            slf.errorMessageView.animateViewAlphaToAppear()
             slf.activityIndicator.stopAnimating()
         }).disposed(by: disposeBag)
+    }
+    
+    func receivedCharacters(_ characters: [BreakingBadCharacter]) {
+        activityIndicator.stopAnimating()
+        if characters.count == 0 {
+            noContentView.isHidden = false
+            noContentView.animateViewAlphaToAppear()
+        } else if characters.count > 0 && noContentView.alpha > 0 {
+            noContentView.animateViewAlphaToDisappear()
+        }
+        
+        self.characters = characters
     }
     
     func bindUI() {
